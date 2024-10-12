@@ -1,7 +1,6 @@
 //Samantha Pintor
 //Lab 5 
 //10-08-24
-
 #include <iostream>
 #include <ctime> 
 
@@ -9,41 +8,63 @@ using namespace std;
 
 int main ()
 {
-int direct; //creating variable for direct 
-int north = 0; //variable for north 
-int west = 0; //variable for west
-int east = 0; //variable for east
-int south = 0; //variable for south
-int numberSteps = 0; //variable for number of steps
+  
+    int a;  //declaring variable for a 
+    
+    srand(time(0)); // Initialize random number generator
+  
+    for (a = 0; a < 10; a ++) //making it run ten times
+    {
+    
+    //declaring variables 
+    int direct; // Variable for direction 
+    int north = 0; // Variable for north 
+    int east = 0; // Variable for east
+    int numberSteps = 0; // Variable for number of steps
 
 
-//numberOfSteps = 
-srand(time(0));
+    while (north != 3 || east != 2) // Loop until the destination is reached
+    {
+        numberSteps++; // Increase the number of steps by one
+        
+        direct = rand() % 4 + 1; // 1 = North, 2 = South, 3 = East, 4 = West
 
-while (north == 1 || east == 3) //**not two or not three
-{
-    direct = rand() % 4 + 1; //1 means North, 2 means South, 3 means East and 4 means West
-
-    if (direct == 1)
+        if (direct == 1) // Move North
         {
-            north = north + 1;
-            numberSteps = numberSteps + 1;
+            north++; // Move north
         }
-    if (direct == 2)
+        else if (direct == 2) // Move South
         {
-            south = south + 1;
-            numberSteps = numberSteps + 1; 
+            north--; // Decrease north (move down)
         }
-    if (direct == 3)
+        else if (direct == 3) // Move East
         {
-            east = east + 1;
-            numberSteps = numberSteps + 1;
+            east++; // Move east         
         }
-    if (direct == 4)
+        else if (direct == 4) // Move West
         {
-            west = west + 1;
-            numberSteps = numberSteps + 1; 
+            east--; // Decrease east (move left)
         }
+    }
 
-
+    // Print the number of steps taken to reach the goal destination
+    cout << "It takes " << numberSteps << " steps to get to the goal destination." << endl; 
+        
+    }
+  
+    return 0; 
 }
+
+/* Extra Credit: 
+It takes 77 steps to get to the goal destination. 
+It takes 13 steps to get to the goal destination. 
+It takes 1609 steps to get to the goal destination. 
+It takes 39 steps to get to the goal destination. 
+It takes 171 steps to get to the goal destination. 
+It takes 191 steps to get to the goal destination. 
+It takes 34315 steps to get to the goal destination. 
+It takes 33073 steps to get to the goal destination. 
+It takes 268617747 steps to get to the goal destination. 
+It takes 203 steps to get to the goal destination. 
+*/
+    
