@@ -1,6 +1,10 @@
 //Samantha Pintor
 //Lab 5 
 //10-08-24
+//Samantha Pintor
+//Lab 5 
+//10-08-24
+
 #include <iostream>
 #include <ctime> 
 
@@ -10,7 +14,9 @@ int main ()
 {
   
     int a;  //declaring variable for a 
-    
+    int totalSteps = 0; //initializes the variable totalSteps to zero
+
+
     srand(time(0)); // Initialize random number generator
   
     for (a = 0; a < 10; a ++) //making it run ten times
@@ -21,7 +27,6 @@ int main ()
     int north = 0; // Variable for north 
     int east = 0; // Variable for east
     int numberSteps = 0; // Variable for number of steps
-
 
     while (north != 3 || east != 2) // Loop until the destination is reached
     {
@@ -49,22 +54,33 @@ int main ()
 
     // Print the number of steps taken to reach the goal destination
     cout << "It takes " << numberSteps << " steps to get to the goal destination." << endl; 
-        
+  
+    totalSteps += numberSteps; //variable "totalSteps" is the number of total steps 
     }
+    
+    //declaring variables
+    int averageSteps; //variable for average number of steps
+    
+    //calculating the average number of steps
+    averageSteps = totalSteps/10; //the total number of steps divided by ten
+    cout << "Average Number of Steps: " << averageSteps << endl; //statement for number of steps
+    
+    
   
     return 0; 
 }
 
 /* Extra Credit: 
-It takes 77 steps to get to the goal destination. 
-It takes 13 steps to get to the goal destination. 
-It takes 1609 steps to get to the goal destination. 
-It takes 39 steps to get to the goal destination. 
-It takes 171 steps to get to the goal destination. 
-It takes 191 steps to get to the goal destination. 
-It takes 34315 steps to get to the goal destination. 
-It takes 33073 steps to get to the goal destination. 
-It takes 268617747 steps to get to the goal destination. 
-It takes 203 steps to get to the goal destination. 
+It takes 20097 steps to get to the goal destination. 
+It takes 333 steps to get to the goal destination. 
+It takes 45 steps to get to the goal destination. 
+It takes 1559 steps to get to the goal destination. 
+It takes 297 steps to get to the goal destination. 
+It takes 41 steps to get to the goal destination. 
+It takes 518179 steps to get to the goal destination. 
+It takes 1399 steps to get to the goal destination. 
+It takes 27 steps to get to the goal destination. 
+It takes 231 steps to get to the goal destination. 
+Average Number of Steps: 54220
 */
     
